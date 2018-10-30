@@ -27,3 +27,13 @@
 #postBody {
     text-align: left;
 }
+#postInfo {
+    text-align: left;
+}
+
+/* #signOut {
+    border-style: solid;
+    border-width: 1px;
+    width: 70px;
+    text-align: center;
+} */
