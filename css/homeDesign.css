@@ -5,8 +5,10 @@
     width: 400px;
     padding-left: 40px;
     padding-right: 40px;
-    margin-left: 470px;
-    margin-right: 470px;
+    /* margin-left: 470px;  */
+    /* margin-right: 470px; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #loginWelcome {
@@ -44,4 +46,12 @@
 
 #userimage {
   padding-left: 35px;
+}
+
+.tab {
+    text-align: center;
+}
+
+#heading {
+    text-align: center;
 }
