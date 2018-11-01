@@ -3,6 +3,7 @@
     <head>
       <meta charset="utf-8" />
         <link rel="stylesheet" href="css/homeDesign.css">
+        <script src="js/tab.js"></script>
           <br>
           <ul class = "col-sm-12">
             <div id="menu" class= "col-sm-4">
@@ -42,97 +43,110 @@
         </ul>
     </head>
     <body>
+      <!-- Tab links -->
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
+      <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
+    </div>
       <br>
       <br>
       <br>
       <br>
       <br>
-      <div class="question" id="post">
-        <ul class="col-sm-12">
-          <div class="col-sm-4" id="image">
-            <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
+          <!-- Tab content -->
+    <div id="questionTab" class="tabcontent">
+        <div class="question" id="post">
+            <ul class="col-sm-12">
+              <div class="col-sm-4" id="image">
+                <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
+              </div>
+              <div class="col-sm-8">
+                <h2 id="name">
+                  Megan Smith
+                </h2>
+              </div>
+            </ul>
+            <p id="time">
+              4:31 pm
+            </p>
+            <p id="postBody">
+              Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec?
+            </p>
+                <p class="feature">
+                <img src="images/heart.png" height="20px" width="20px" alt="heart">
+                2 Likes
+                </p>
+                <p class="feature">
+                <a href="acne.html">#acne</a>
+                </p>
+                <p class="feature">
+                  View Comments (1)
+                </p>
           </div>
-          <div class="col-sm-8">
-            <h2 id="name">
-              Megan Smith
-            </h2>
+          <br>
+          <div class="question" id="post">
+            <ul class="col-sm-12">
+              <div class="col-sm-4" id="image">
+                <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
+              </div>
+              <div class="col-sm-8">
+                <h2 id="name">
+                  Maria Carr
+                </h2>
+              </div>
+            </ul>
+            <p id="time">
+              11:10 am
+            </p>
+            <p id="postBody">
+              Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec?
+            </p>
+                <p class="feature">
+                <img src="images/heart.png" height="20px" width="20px" alt="heart">
+                1 Like
+                </p>
+                <p class="feature">
+                <a href="combo.html">#combo</a>
+                </p>
+                <p class="feature">
+                  View Comments (2)
+                </p>
           </div>
-        </ul>
-        <p id="time">
-          4:31 pm
-        </p>
-        <p id="postBody">
-          Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec?
-        </p>
-            <p class="feature">
-            <img src="images/heart.png" height="20px" width="20px" alt="heart">
-            2 Likes
+          <br>
+          <div class="question" id="post">
+            <ul class="col-sm-12">
+              <div class="col-sm-4" id="image">
+                <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
+              </div>
+              <div class="col-sm-8">
+                <h2 id="name">
+                  Catherine Lopez
+                </h2>
+              </div>
+            </ul>
+            <p id="time">
+              9:25 am
             </p>
-            <p class="feature">
-            <a href="acne.html">#acne</a>
+            <p id="postBody">
+              Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec?
             </p>
-            <p class="feature">
-              View Comments (1)
-            </p>
+                <p class="feature">
+                <img src="images/heart.png" height="20px" width="20px" alt="heart">
+                2 Likes
+                </p>
+                <p class="feature">
+                <a href="oily.html">#oily</a>
+                </p>
+                <p class="feature">
+                  View Comments (0)
+                </p>
+          </div>
       </div>
-      <br>
-      <div class="question" id="post">
-        <ul class="col-sm-12">
-          <div class="col-sm-4" id="image">
-            <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
-          </div>
-          <div class="col-sm-8">
-            <h2 id="name">
-              Maria Carr
-            </h2>
-          </div>
-        </ul>
-        <p id="time">
-          11:10 am
-        </p>
-        <p id="postBody">
-          Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec?
-        </p>
-            <p class="feature">
-            <img src="images/heart.png" height="20px" width="20px" alt="heart">
-            1 Like
-            </p>
-            <p class="feature">
-            <a href="combo.html">#combo</a>
-            </p>
-            <p class="feature">
-              View Comments (2)
-            </p>
+    
+      <div id="recommendationTab" class="tabcontent">
+        <h3>Recommendations</h3>
       </div>
-      <br>
-      <div class="question" id="post">
-        <ul class="col-sm-12">
-          <div class="col-sm-4" id="image">
-            <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
-          </div>
-          <div class="col-sm-8">
-            <h2 id="name">
-              Catherine Lopez
-            </h2>
-          </div>
-        </ul>
-        <p id="time">
-          9:25 am
-        </p>
-        <p id="postBody">
-          Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec?
-        </p>
-            <p class="feature">
-            <img src="images/heart.png" height="20px" width="20px" alt="heart">
-            2 Likes
-            </p>
-            <p class="feature">
-            <a href="oily.html">#oily</a>
-            </p>
-            <p class="feature">
-              View Comments (0)
-            </p>
-      </div>
+      
       <script src="js/navbar.js"></script>
     </body>
 </html>
