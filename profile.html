@@ -2,9 +2,9 @@
 <html>
 <head>
   <title> qlarity | Profile </title>
-  <link href="homeDesign.css" rel="stylesheet" />
+  <link href="css/homeDesign.css" rel="stylesheet" />
   <ul class = "col-sm-12">
-    <div id="menu" class= "col-sm-4">
+    <div id="menu" class="col-sm-4">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="css/navbar.css">
       <link rel="stylesheet" type="text/css" href="css/post.css">
@@ -30,10 +30,10 @@
       <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
     </div>
   </div>
-  <div class = "col-sm-4">
+  <div class="col-sm-4">
     <p id="logo">qlarity</p>
   </div>
-  <div id="signout" class = "col-sm-4">
+  <div id="signout" class="col-sm-4">
     <p>Welcome, Jessica!</p>
     <p>Sign Out</p>
   </div>
@@ -41,36 +41,74 @@
   </head>
 
 <body>
-  <div class="name">
-    <img src="images/default-avatar.png" height="100px" width="100px" alt="Profile Picture">
-    <h2> Jessica Ngo </h2>
-  </div>
+    <ul class="col-sm-12">
+      <div class="col-sm-2" id="userimage">
+        <img src="images/default-avatar.png" height="100px" width="100px" alt="Profile Picture">
+      </div>
+      <div class="col-sm-10" id="username">
+        <h2> Jessica Ngo </h2>
+      </div>
+    </ul>
 
   <h3> Jessica's Questions </h3>
-  <div class="questions" id="post">
-    <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
-    <h4> Jessica Ngo </h4>
-    <p class="timestamp"> 2:11 pm </p>
-    <p class="post"> I have a question about alskdfjlsdjfalddlafksjdf </p>
-    <p>
-      <img src="images/heart.png" height="20px" width="20px" alt="heart">
-      2 Likes #acne
-      View Comments (1)
-     </p>
+  <div class="question" id="post">
+    <ul class="col-sm-12">
+      <div class="col-sm-4" id="image">
+        <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
+      </div>
+      <div class="col-sm-8">
+        <h2 id="name">
+          Jessica Ngo
+        </h2>
+      </div>
+    </ul>
+    <p id="time">
+      2:11 pm
+    </p>
+    <p id="postBody">
+      I have a question about alskdfjlsdjfalddlafksjdf
+    </p>
+        <p class="feature">
+        <img src="images/heart.png" height="20px" width="20px" alt="heart">
+        2 Likes
+        </p>
+        <p class="feature">
+        <a href="acne.html">#acne</a>
+        </p>
+        <p class="feature">
+          View Comments (1)
+        </p>
+  </div>
+  <h3> Jessica's Recommendations </h3>
+  <div class="recommenation" id="post">
+    <ul class="col-sm-12">
+      <div class="col-sm-4" id="image">
+        <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
+      </div>
+      <div class="col-sm-8">
+        <h2 id="name">
+          Jessica Ngo
+        </h2>
+      </div>
+    </ul>
+    <p id="time">
+      2:11 pm
+    </p>
+    <p id="postBody">
+      I recommend alskdfjlsdjfalddlafksjdf
+    </p>
+        <p class="feature">
+        <img src="images/heart.png" height="20px" width="20px" alt="heart">
+        4 Likes
+        </p>
+        <p class="feature">
+        <a href="oily.html">#oily</a>
+        </p>
+        <p class="feature">
+          View Comments (0)
+        </p>
   </div>
 
-  <h3> Jessica's Recommendations </h3>
-  <div class="recommendations" id="post">
-    <img src="images/default-avatar.png" height="50px" width="50px"alt="Profile Picture">
-    <h4> Jessica Ngo </h4>
-    <p class="timestamp"> 2:11 pm </p>
-    <p class="post"> I recommend alskdfjlsdjfalddlafksjdf </p>
-    <p>
-      <img src="images/heart.png" height="20px" width="20px" alt="heart">
-      4 Likes #oily
-      View Comments (0)
-    </p>
-  </div>
   <script src="js/navbar.js"></script>
 </body>
 </html>
