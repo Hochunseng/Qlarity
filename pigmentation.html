@@ -5,9 +5,11 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="css/navbar.css">
       <link rel="stylesheet" type="text/css" href="css/post.css">
+      <link rel="stylesheet" href="css/homeDesign.css">
       <title>#pigmentation</title>
       <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div id="sideBarLinks">
       <a href="index.html">Home</a>
       <a href="profile.html">Profile</a>
       <a href="post.html">Post</a>
@@ -22,6 +24,8 @@
       <a href="redness.html">#redness</a>
       <a href="sensitive.html">#sensitive</a>
       <a href="other.html">#other</a>
+      <font color="#818181"><h4>Following</h4></font>
+      </div>
     </div>
 
     <div id="main">
@@ -38,7 +42,114 @@
 </ul>
 </head>
 <body>
-  <h1>#pigmentation</h1>
-  <script src="js/navbar.js"></script>
+    <ul class="col-sm-12">
+        <div class="col-sm-6">
+          <h1 id="title">#pigmentation</h1>
+        </div>
+        <div class="col-sm-6">
+          <button onclick="change()" id='follow'>Follow</button>
+        </div>
+      </ul>
+    
+    
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
+        <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
+      </div>
+            <!-- Tab content -->
+      <div id="questionTab" class="tabcontent">
+          <h2 id="heading">Questions</h2>
+          <div class="question" id="post">
+              <ul class="col-sm-12">
+                <div class="col-sm-4" id="image">
+                  <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+                </div>
+                <div class="col-sm-8">
+                  <h2 id="name">
+                    Megan Smith
+                  </h2>
+                </div>
+              </ul>
+              <p id="time">
+                4:31 pm
+              </p>
+              <p id="postBody">
+                I've been breaking out and my acne has gotten worse. Can anyone suggest any good spot treatments for pimples?
+              </p>
+                  <p class="feature">
+                    <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+                  2 Likes
+                  </p>
+                  <p class="feature">
+                  <a href="acne.html">#acne</a>
+                  </p>
+                  <p class="feature">
+                      <a href="comments.html"> View Comments (1) </a>
+                  </p>
+            </div>
+            <br>
+            <div class="question" id="post">
+              <ul class="col-sm-12">
+                <div class="col-sm-4" id="image">
+                  <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+                </div>
+                <div class="col-sm-8">
+                  <h2 id="name">
+                    Maria Carr
+                  </h2>
+                </div>
+              </ul>
+              <p id="time">
+                11:10 am
+              </p>
+              <p id="postBody">
+                I have dark spots on my face and I'm looking for a treatment to get lighten them up. Does anyone have any good product recommendations?
+              </p>
+              <p class="feature">
+                <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+                2 Likes
+              </p>
+              <p class="feature">
+                  <a href="pigmentation.html"> #pigmentation </a>
+              </p>
+              <p class="feature">
+                  <a href="comments.html"> View Comments (2) </a>
+            </p>
+        </div>
+            <br>
+            <div class="question" id="post">
+              <ul class="col-sm-12">
+                <div class="col-sm-4" id="image">
+                  <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+                </div>
+                <div class="col-sm-8">
+                  <h2 id="name">
+                    Catherine Lopez
+                  </h2>
+                </div>
+              </ul>
+              <p id="time">
+                9:25 am
+              </p>
+              <p id="postBody">
+                My skin is super oily and I want a face lotion that won't make me shiny. I've tried Aveeno but it doesn't work.
+                What brand of lotion would work best for me?
+              </p>
+                  <p class="feature">
+                    <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+                  2 Likes
+                  </p>
+                  <p class="feature">
+                  <a href="oily.html">#oily</a>
+                  </p>
+                  <p class="feature">
+                      <a href="comments.html"> View Comments (0) </a>
+                  </p>
+            </div>
+        </div>
+      <script src="js/navbar.js"></script>
+      <script src="js/tab.js"></script>
+      <script src="js/heartToggle.js"></script>
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
 </body>
 </html>

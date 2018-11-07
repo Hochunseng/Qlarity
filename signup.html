@@ -1,9 +1,37 @@
 <html>
 <head>
 <title>sign up</title>
+<link rel="stylesheet" type="text/css" href="css/signin.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
-<h1>sign up</h1>
-<a href="index.html">sign up</a>
+  <p id="logo"><a href="index.html"> qlarity </a></p>
+  <div class="login-page">
+    <div class="form">
+      <form class="register-form">
+        <input type="text" placeholder="name"/>
+        <input type="password" placeholder="password"/>
+        <input type="text" placeholder="email address"/>
+        <button>create</button>
+        <p class="message">Already registered? <a href="index.html">Sign In</a></p>
+      </form>
+      <form class="login-form">
+        <input type="firstname" placeholder="first name"/>
+        <input type="lastname" placeholder="last name"/>
+        <input type="text" placeholder="username"/>
+        <input type="password" placeholder="password"/>
+        <input type="email" placeholder="email"/>
+        <ul class="col-sm-12">
+          <div class="col-sm-6">
+            <button><a href="signin.html">sign in</a></button>
+          </div>
+          <div class="col-sm-6">
+            <button><a href="index.html">sign up</a></button>
+          </div>
+        </ul>
+      </form>
+    </div>
+  </div>
+  <script src="js/signin.js"></script>
 </body>
 </html>

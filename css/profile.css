@@ -66,8 +66,3 @@ ul.col-sm-12 {
   left: -40px;
   top: 10px;
 }
-
-/* for heart shaped like button */
-.heart:hover {
-  background-color: #cc4b37;
-}
