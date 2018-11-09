@@ -41,6 +41,11 @@
   text-align: center;
 }
 
+body {
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
 /* centering the text & text text box */
 .textInput {
   text-align: center;

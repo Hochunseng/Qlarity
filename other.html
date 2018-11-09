@@ -1,5 +1,7 @@
 <html>
 <head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/welcomeMessage.js"></script>
   <ul class = "col-sm-12">
     <div id="menu" class= "col-sm-4">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -36,120 +38,151 @@
     <p id="logo"><a href="index.html"> qlarity </a></p>
   </div>
   <div id="signout" class = "col-sm-4">
-    <p>Welcome, Jessica!</p>
+    <p onload="getUsername()" id="welcomeMessage"></p>
     <p><a href="signin.html"> Sign Out </a></p>
   </div>
 </ul>
 </head>
 <body>
-    <ul class="col-sm-12">
-        <div class="col-sm-6">
-          <h1 id="title">#other</h1>
+  <ul class="col-sm-12">
+    <div class="col-sm-6">
+      <h1 id="title">#other</h1>
+    </div>
+    <div class="col-sm-6">
+      <button onclick="change()" id='follow'>Follow</button>
+    </div>
+  </ul>
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
+  <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
+</div>
+<!-- Tab content -->
+<!-- questions -->
+<div id="questionTab" class="tabcontent">
+    <h2 id="heading">Questions</h2>
+      <div class="question" id="post">
+        <ul class="col-sm-12">
+          <div class="col-sm-4" id="image">
+            <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+          </div>
+          <div class="col-sm-8">
+            <h2 id="name">Tracy Dexter</h2>
+            <p id="time">11:10 am</p>
+          </div>
+        </ul>
+        <p id="postBody">
+          I'm looking for cruelty free brands that preferably sell their products at drug stores.
+          Does anyone have any favorites or any recommendations?
+        </p>
+        <div class="feature">
+          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+          3 Likes
+          &nbsp; &nbsp;
+          <a href="other.html"> #other </a>
+          <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (2) </a>
         </div>
-        <div class="col-sm-6">
-          <button onclick="change()" id='follow'>Follow</button>
+       </div>
+       <!--these are the comments -->
+
+       <!-- <div class="collapse" id="comment"> -->
+       <div class="collapse" id="comment">
+         <ul class="col-sm-12">
+           <div class="col-sm-4" id="image">
+             <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+           </div>
+           <div class="col-sm-8">
+             <h2 id="name">Jeremy Zucker</h2>
+             <p id="time">11:35 am</p>
+           </div>
+         </ul>
+         <p id="postBody"> Freeman Beauty has great face masks. You can get them at Target or Ulta! </p>
+      <!-- this is the second comment on the post -->
+        <div class="next-comment">
+         <ul class="col-sm-12">
+           <div class="col-sm-4" id="image">
+             <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+           </div>
+           <div class="col-sm-8">
+             <h2 id="name">Phoebe Ryan</h2>
+             <p id="time">1:25 pm</p>
+           </div>
         </div>
-      </ul>
-    
-    
-      <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
-        <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
+     </ul>
+         <p id="postBody"> Elf cosmetics is expanding into some regular skincare products in addition to their makeup! </p>
+       </div>
+      <br>
+      <!-- next question -->
+      <div class="question" id="post">
+        <ul class="col-sm-12">
+          <div class="col-sm-4" id="image">
+            <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+          </div>
+          <div class="col-sm-8">
+            <h2 id="name">Katie Pearlman</h2>
+            <p id="time">9:25 am</p>
+          </div>
+        </ul>
+        <p id="postBody">
+          I get really bad undereye bags and am looking for something to relieve the puffiness. Any product suggestions?
+        </p>
+        <div class="feature">
+            <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+            1 Like
+            &nbsp; &nbsp;
+            <a href="other.html">#other</a>
+            <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (0) </a>
+          </div>
+        </div>
       </div>
-            <!-- Tab content -->
-      <div id="questionTab" class="tabcontent">
-          <h2 id="heading">Questions</h2>
-          <div class="question" id="post">
-              <ul class="col-sm-12">
-                <div class="col-sm-4" id="image">
-                  <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
-                </div>
-                <div class="col-sm-8">
-                  <h2 id="name">
-                    Megan Smith
-                  </h2>
-                </div>
-              </ul>
-              <p id="time">
-                4:31 pm
-              </p>
-              <p id="postBody">
-                I've been breaking out and my acne has gotten worse. Can anyone suggest any good spot treatments for pimples?
-              </p>
-                  <p class="feature">
-                    <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-                  2 Likes
-                  </p>
-                  <p class="feature">
-                  <a href="acne.html">#acne</a>
-                  </p>
-                  <p class="feature">
-                      <a href="comments.html"> View Comments (1) </a>
-                  </p>
-            </div>
-            <br>
+
+    <!-- recommendations -->
+        <div id="recommendationTab" class="tabcontent" style="display:none">
+            <h2 id="heading">Recommendations</h2>
             <div class="question" id="post">
               <ul class="col-sm-12">
                 <div class="col-sm-4" id="image">
                   <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
                 </div>
                 <div class="col-sm-8">
-                  <h2 id="name">
-                    Maria Carr
-                  </h2>
+                  <h2 id="name">Nick Jonas</h2>
+                  <p id="time"> 4:31 pm </p>
                 </div>
-              </ul>
-              <p id="time">
-                11:10 am
-              </p>
-              <p id="postBody">
-                I have dark spots on my face and I'm looking for a treatment to get lighten them up. Does anyone have any good product recommendations?
-              </p>
-              <p class="feature">
-                <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-                2 Likes
-              </p>
-              <p class="feature">
-                  <a href="pigmentation.html"> #pigmentation </a>
-              </p>
-              <p class="feature">
-                  <a href="comments.html"> View Comments (2) </a>
+            </ul>
+            <p id="postBody">
+              People of all skin types can definitely benefit from some Mario Badescu rosewater facial spray.
+              It's so refreshing and has made my skin and my life so much better!
             </p>
-        </div>
-            <br>
-            <div class="question" id="post">
-              <ul class="col-sm-12">
-                <div class="col-sm-4" id="image">
-                  <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
-                </div>
-                <div class="col-sm-8">
-                  <h2 id="name">
-                    Catherine Lopez
-                  </h2>
-                </div>
-              </ul>
-              <p id="time">
-                9:25 am
-              </p>
-              <p id="postBody">
-                My skin is super oily and I want a face lotion that won't make me shiny. I've tried Aveeno but it doesn't work.
-                What brand of lotion would work best for me?
-              </p>
-                  <p class="feature">
-                    <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-                  2 Likes
-                  </p>
-                  <p class="feature">
-                  <a href="oily.html">#oily</a>
-                  </p>
-                  <p class="feature">
-                      <a href="comments.html"> View Comments (0) </a>
-                  </p>
+            <div class="feature">
+              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+              13 Likes
+              &nbsp; &nbsp;
+              <a href="other.html">#other</a>
+              <a class="btn" data-toggle="collapse" data-target="#comment">View Comments (0)</a>
             </div>
         </div>
+          <!-- the comment below the original recommendation post -->
+          <div class="collapse" id="comment">
+            <ul class="col-sm-12">
+              <div class="col-sm-4" id="image">
+                <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+              </div>
+              <div class="col-sm-8">
+                <h2 id="name"> Katie Johnson </h2>
+                <p id="time"> 10:35 am </p>
+              </div>
+            </ul>
+              <p id="postBody"> I agree, I love this product! </p>
+          </div>
+        </div>
+
+
       <script src="js/navbar.js"></script>
       <script src="js/tab.js"></script>
       <script src="js/heartToggle.js"></script>
       <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

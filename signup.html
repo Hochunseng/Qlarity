@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
-  <p id="logo"><a href="index.html"> qlarity </a></p>
+  <p id="logo"> qlarity </p>
   <div class="login-page">
     <div class="form">
       <form class="register-form">
@@ -13,25 +13,26 @@
         <input type="password" placeholder="password"/>
         <input type="text" placeholder="email address"/>
         <button>create</button>
-        <p class="message">Already registered? <a href="index.html">Sign In</a></p>
+        <p class="message">Already registered? <a href="signin.html">Sign In</a></p>
       </form>
       <form class="login-form">
         <input type="firstname" placeholder="first name"/>
         <input type="lastname" placeholder="last name"/>
-        <input type="text" placeholder="username"/>
+        <input type="text" placeholder="username" id="username"/>
         <input type="password" placeholder="password"/>
         <input type="email" placeholder="email"/>
         <ul class="col-sm-12">
           <div class="col-sm-6">
-            <button><a href="signin.html">sign in</a></button>
+            <button type="submit" formaction="signin.html">sign in</button>
           </div>
           <div class="col-sm-6">
-            <button><a href="index.html">sign up</a></button>
+            <button onclick="store()"type="submit" formaction="index.html">sign up</button>
           </div>
         </ul>
       </form>
     </div>
   </div>
-  <script src="js/signin.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/signup.js"></script>
 </body>
 </html>

@@ -57,12 +57,31 @@
   padding-left: 25%;
 }
 
-img.profpic{
+.big-profpic{
   border-radius: 50%;
 }
 
-/* for aligning pic + name in text box */
-ul.col-sm-12 {
-  left: -40px;
-  top: 10px;
+body {
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+/* formatting picture, name & time within text box */
+.profpic {
+  margin-left: -50px;
+  border-radius: 50%;
+}
+#name {
+  margin-left: -45px;
+  margin-top: 25px;
+}
+#time {
+  margin-right: 160px;
+  margin-left: -68px;
+  width: 100px;
+}
+.feature {
+  text-align: center;
+  margin-left: -30px;
+  width: 400px;
 }

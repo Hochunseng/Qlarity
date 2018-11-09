@@ -4,6 +4,8 @@
   <title> qlarity | Profile </title>
   <link href="css/profile.css" rel="stylesheet" />
   <script src="js/heartToggle.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/welcomeMessage.js"></script>
   <ul class = "col-sm-12">
     <div id="menu" class="col-sm-4">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -36,7 +38,7 @@
     <p id="logo"><a href="index.html"> qlarity </a></p>
   </div>
   <div id="signout" class="col-sm-4">
-    <p>Welcome, Jessica!</p>
+    <p onload="getUsername()" id="welcomeMessage"></p>
     <p><a href="signin.html"> Sign Out </a></p>
   </div>
   </ul>
@@ -46,7 +48,7 @@
   <div class="user-basics">
     <ul class="col-sm-12">
       <div class="col-sm-2" id="userimage">
-        <img src="images/default-avatar.png" class="profpic" height="100px" width="100px" alt="Profile Picture">
+        <img src="images/default-avatar.png" class="big-profpic" height="100px" width="100px" alt="Profile Picture">
       </div>
       <div class="col-sm-10" id="username">
         <h2> Jessica Ngo </h2>
@@ -54,68 +56,88 @@
     </ul>
   </div>
 
-  <h3 class="category"> Jessica's Questions </h3>
+  <h3 class="category"> My Questions </h3>
   <div class="question" id="post">
     <ul class="col-sm-12">
       <div class="col-sm-4" id="image">
+        <br />
         <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
       </div>
       <div class="col-sm-8">
         <h2 id="name">
           Jessica Ngo
         </h2>
+        <p id="time">
+          3:14 pm
+        </p>
       </div>
     </ul>
-    <p id="time">
-      2:11 pm
-    </p>
     <p id="postBody">
       I have a question about sunscreen products.
       I'm currently using Neutrogena sunscreen but it's causing my skin to break out.
       Does anyone have any recommendations for other sunscreens that are good for acne-prone skin?
     </p>
-        <p class="feature">
-        <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-        2 Likes
-        </p>
-        <p class="feature">
-        <a href="acne.html">#acne</a>
-        </p>
-        <p class="feature">
-          <a href="comments.html"> View Comments (1) </a>
-        </p>
-  </div>
-  <h3 class="category"> Jessica's Recommendations </h3>
-  <div class="recommenation" id="post">
+        <div class="feature">
+          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+            2 Likes
+            &nbsp; &nbsp;
+          <a href="acne.html"> #acne </a>
+          <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (1) </a>
+        </div>
+
+      </div>
+      <div id="post">
+        <div class="collapse" id="comment">
+          <ul class="col-sm-12">
+            <div class="col-sm-4" id="image">
+              <br />
+              <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+            </div>
+            <div class="col-sm-8">
+              <h2 id="name"> Marina Grace </h2>
+              <p id="time"> 11:35 am </p>
+            </div>
+          </ul>
+          <p id="postBody"> I recommend trying Coola sunscreen. You can get it from Sephora in stores or online! </p>
+        </div>
+      </div>
+
+
+  <h3 class="category"> My Recommendations </h3>
+  <div class="recommendation" id="post">
     <ul class="col-sm-12">
       <div class="col-sm-4" id="image">
+        <br />
         <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
       </div>
       <div class="col-sm-8">
         <h2 id="name">
           Jessica Ngo
         </h2>
+        <p id="time">
+          2:11 pm
+        </p>
       </div>
     </ul>
-    <p id="time">
-      2:11 pm
-    </p>
+
     <p id="postBody">
       I found a really great toner for oily skin!
       It's the Tea Tree Oil Toner from The Body Shop and I use it every day after washing my face with cleanser.
       I recommend it for anyone with who has problems with shiny or oily skin.
     </p>
-        <p class="feature">
+      <div class="feature">
         <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
         4 Likes
-        </p>
-        <p class="feature">
+        &nbsp; &nbsp;
         <a href="oily.html">#oily</a>
-        </p>
-        <p class="feature">
-          <a href="comments.html"> View Comments (0) </a>
-        </p>
+        <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (0) </a>
+      </div>
   </div>
   <script src="js/navbar.js"></script>
+  <script src="js/tab.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

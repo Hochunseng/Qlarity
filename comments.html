@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/welcomeMessage.js"></script>
   <title> qlarity | Comments </title>
   <ul class = "col-sm-12">
     <div id="menu" class= "col-sm-4">
@@ -34,7 +36,7 @@
     <p id="logo"> <a href="index.html"> qlarity </a> </p>
   </div>
   <div id="signout" class = "col-sm-4">
-    <p>Welcome, Jessica!</p>
+    <p onload="getUsername()" id="welcomeMessage"></p>
     <p> <a href="signin.html"> Sign Out </a> </p>
   </div>
 </ul>

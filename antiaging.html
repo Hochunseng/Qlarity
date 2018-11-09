@@ -1,5 +1,7 @@
 <html>
 <head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/welcomeMessage.js"></script>
   <ul class = "col-sm-12">
     <div id="menu" class= "col-sm-4">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -36,120 +38,167 @@
     <p id="logo"><a href="index.html"> qlarity </a></p>
   </div>
   <div id="signout" class = "col-sm-4">
-    <p>Welcome, Jessica!</p>
+    <p onload="getUsername()" id="welcomeMessage"></p>
     <p><a href="signin.html"> Sign Out </a></p>
   </div>
 </ul>
 </head>
 <body>
-    <ul class="col-sm-12">
-        <div class="col-sm-6">
-          <h1 id="title">#anti-aging</h1>
-        </div>
-        <div class="col-sm-6">
-          <button onclick="change()" id='follow'>Follow</button>
-        </div>
-      </ul>
-    
-    
-      <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
-        <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
-      </div>
-            <!-- Tab content -->
-      <div id="questionTab" class="tabcontent">
-          <h2 id="heading">Questions</h2>
-          <div class="question" id="post">
-              <ul class="col-sm-12">
-                <div class="col-sm-4" id="image">
-                  <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
-                </div>
-                <div class="col-sm-8">
-                  <h2 id="name">
-                    Megan Smith
-                  </h2>
-                </div>
-              </ul>
-              <p id="time">
-                4:31 pm
-              </p>
-              <p id="postBody">
-                I've been breaking out and my acne has gotten worse. Can anyone suggest any good spot treatments for pimples?
-              </p>
-                  <p class="feature">
-                    <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-                  2 Likes
-                  </p>
-                  <p class="feature">
-                  <a href="acne.html">#acne</a>
-                  </p>
-                  <p class="feature">
-                      <a href="comments.html"> View Comments (1) </a>
-                  </p>
-            </div>
-            <br>
-            <div class="question" id="post">
-              <ul class="col-sm-12">
-                <div class="col-sm-4" id="image">
-                  <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
-                </div>
-                <div class="col-sm-8">
-                  <h2 id="name">
-                    Maria Carr
-                  </h2>
-                </div>
-              </ul>
-              <p id="time">
-                11:10 am
-              </p>
-              <p id="postBody">
-                I have dark spots on my face and I'm looking for a treatment to get lighten them up. Does anyone have any good product recommendations?
-              </p>
-              <p class="feature">
-                <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-                2 Likes
-              </p>
-              <p class="feature">
-                  <a href="pigmentation.html"> #pigmentation </a>
-              </p>
-              <p class="feature">
-                  <a href="comments.html"> View Comments (2) </a>
+  <ul class="col-sm-12">
+    <div class="col-sm-6">
+      <h1 id="title">#anti-aging</h1>
+    </div>
+    <div class="col-sm-6">
+      <button onclick="change()" id='follow'>Follow</button>
+    </div>
+  </ul>
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
+  <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
+</div>
+<!-- Tab content -->
+<!-- questions -->
+<div id="questionTab" class="tabcontent">
+    <h2 id="heading">Questions</h2>
+      <div class="question" id="post">
+        <ul class="col-sm-12">
+          <div class="col-sm-4" id="image">
+            <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+          </div>
+          <div class="col-sm-8">
+            <h2 id="name">
+              Anna Carter
+            </h2>
+            <p id="time">
+              11:10 am
             </p>
+          </div>
+        </ul>
+        <p id="postBody">
+          I want to prevent fine lines on my face but I'm not sure what products would be best for the lines around my eyes. Can anyone recommend anything?
+        </p>
+        <div class="feature">
+          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+          2 Likes
+          &nbsp; &nbsp;
+          <a href="antiaging.html"> #anti-aging </a>
+          <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (2) </a>
         </div>
-            <br>
+       </div>
+       <!--these are the comments -->
+
+       <!-- <div class="collapse" id="comment"> -->
+       <div class="collapse" id="comment">
+         <ul class="col-sm-12">
+           <div class="col-sm-4" id="image">
+             <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+           </div>
+           <div class="col-sm-8">
+             <h2 id="name">
+               Kayla Waller
+             </h2>
+             <p id="time">
+               11:35 am
+             </p>
+           </div>
+         </ul>
+         <p id="postBody"> Kiehl's has good products for this. You should check them out. </p>
+      <!-- this is the second comment on the post -->
+        <div class="next-comment">
+         <ul class="col-sm-12">
+           <div class="col-sm-4" id="image">
+             <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+           </div>
+           <div class="col-sm-8">
+             <h2 id="name">
+               Andrea Zhang
+             </h2>
+             <p id="time">
+               1:25 pm
+             </p>
+          </div>
+        </div>
+     </ul>
+         <p id="postBody"> I agree with Kayla. You should try Kiehl's!</p>
+       </div>
+      <br>
+      <!-- next question -->
+      <div class="question" id="post">
+        <ul class="col-sm-12">
+          <div class="col-sm-4" id="image">
+            <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+          </div>
+          <div class="col-sm-8">
+            <h2 id="name">
+              Christina O'Neill
+            </h2>
+            <p id="time">
+              9:25 am
+            </p>
+          </div>
+        </ul>
+        <p id="postBody">
+          I'm in my late 20s but I'm worried about wrinkles. What products will help prevent them?
+        </p>
+            <div class="feature">
+              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+              2 Likes
+              &nbsp; &nbsp;
+              <a href="antiaging.html">#anti-aging</a>
+              <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (0) </a>
+            </div>
+          </div>
+        </div>
+
+    <!-- recommendations -->
+        <div id="recommendationTab" class="tabcontent" style="display:none">
+            <h2 id="heading">Recommendations</h2>
             <div class="question" id="post">
               <ul class="col-sm-12">
                 <div class="col-sm-4" id="image">
                   <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
                 </div>
                 <div class="col-sm-8">
-                  <h2 id="name">
-                    Catherine Lopez
-                  </h2>
+                  <h2 id="name"> Melody Thompson </h2>
+                  <p id="time"> 4:31 pm </p>
                 </div>
               </ul>
-              <p id="time">
-                9:25 am
-              </p>
-              <p id="postBody">
-                My skin is super oily and I want a face lotion that won't make me shiny. I've tried Aveeno but it doesn't work.
-                What brand of lotion would work best for me?
-              </p>
-                  <p class="feature">
-                    <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-                  2 Likes
-                  </p>
-                  <p class="feature">
-                  <a href="oily.html">#oily</a>
-                  </p>
-                  <p class="feature">
-                      <a href="comments.html"> View Comments (0) </a>
-                  </p>
+
+
+            <p id="postBody">
+              Neutrogena has a really good anti-aging line. No matter your skin type, you should try it out!
+            </p>
+            <div class="feature">
+              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+              2 Likes
+              &nbsp; &nbsp;
+              <a href="antiaging.html">#anti-aging</a>
+              <a class="btn" data-toggle="collapse" data-target="#comment">View Comments (0)</a>
             </div>
+          </div>
+          <!-- the comment below the original recommendation post -->
+          <div class="collapse" id="comment">
+            <ul class="col-sm-12">
+              <div class="col-sm-4" id="image">
+                <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+              </div>
+              <div class="col-sm-8">
+                <h2 id="name"> Katie Johnson </h2>
+                <p id="time"> 10:35 am </p>
+              </div>
+            </ul>
+              <p id="postBody"> I agree, I love this product! </p>
+          </div>
         </div>
+
+
       <script src="js/navbar.js"></script>
       <script src="js/tab.js"></script>
       <script src="js/heartToggle.js"></script>
       <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

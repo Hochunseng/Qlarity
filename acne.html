@@ -1,5 +1,7 @@
 <html>
 <head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/welcomeMessage.js"></script>
   <ul class = "col-sm-12">
     <div id="menu" class= "col-sm-4">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -36,7 +38,8 @@
     <p id="logo"> <a href="index.html"> qlarity </a> </p>
   </div>
   <div id="signout" class = "col-sm-4">
-    <p>Welcome, Jessica !</p>
+    <!-- <p>Welcome, Jessica !</p> -->
+    <p onload="getUsername()" id="welcomeMessage"></p>
     <p> <a href="signin.html"> Sign Out </a> </p>
   </div>
 </ul>
@@ -57,6 +60,7 @@
     <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
   </div>
         <!-- Tab content -->
+        <!-- questions -->
   <div id="questionTab" class="tabcontent">
       <h2 id="heading">Questions</h2>
       <div class="question" id="post">
@@ -68,25 +72,40 @@
               <h2 id="name">
                 Megan Smith
               </h2>
+              <p id="time">
+                4:31 pm
+              </p>
             </div>
           </ul>
-          <p id="time">
-            4:31 pm
-          </p>
           <p id="postBody">
             I've been breaking out and my acne has gotten worse. Can anyone suggest any good spot treatments for pimples?
           </p>
-              <p class="feature">
+              <div class="feature">
                 <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-              2 Likes
+                2 Likes
+                &nbsp; &nbsp;
+                <a href="acne.html">#acne</a>
+                <a class="btn" data-toggle="collapse" data-target="#comment">View Comments (0)</a>
+              </div>
+        <!-- here is the comment on the post -->
+        <div class="collapse" id="comment">
+          <ul class="col-sm-12">
+            <div class="col-sm-4" id="image">
+              <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+            </div>
+            <div class="col-sm-8">
+              <h2 id="name">
+                Taylor Adams
+              </h2>
+              <p id="time">
+                11:35 am
               </p>
-              <p class="feature">
-              <a href="acne.html">#acne</a>
-              </p>
-              <p class="feature">
-                  <a href="comments.html"> View Comments (1) </a>
-              </p>
+            </div>
+          </ul>
+          <p id="postBody">You should try pimple patches. You can order them on Amazon or get them from Target. </p>
         </div>
+      </div>
+
         <br>
         <div class="question" id="post">
           <ul class="col-sm-12">
@@ -95,26 +114,23 @@
             </div>
             <div class="col-sm-8">
               <h2 id="name">
-                Maria Carr
+                Tonya Daniels
               </h2>
+              <p id="time">
+                11:10 am
+              </p>
             </div>
           </ul>
-          <p id="time">
-            11:10 am
-          </p>
           <p id="postBody">
-            I have dark spots on my face and I'm looking for a treatment to get lighten them up. Does anyone have any good product recommendations?
+            I usually use benzoyl peroxide acne treatment at night but I don't want to bleach my bedsheets. Does anyone know other good acne treatments without benzoyl peroxide?
           </p>
-          <p class="feature">
+          <div class="feature">
             <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
             2 Likes
-          </p>
-          <p class="feature">
-              <a href="pigmentation.html"> #pigmentation </a>
-          </p>
-          <p class="feature">
-              <a href="comments.html"> View Comments (2) </a>
-        </p>
+            &nbsp; &nbsp;
+            <a href="acne.html"> #acne </a>
+            <a class="btn" data-toggle="collapse" data-target="#comment">View Comments (0)</a>
+          </div>
     </div>
         <br>
         <div class="question" id="post">
@@ -124,28 +140,67 @@
             </div>
             <div class="col-sm-8">
               <h2 id="name">
-                Catherine Lopez
+                Megan Lopez
               </h2>
+              <p id="time">
+                9:25 am
+              </p>
             </div>
           </ul>
-          <p id="time">
-            9:25 am
-          </p>
           <p id="postBody">
-            My skin is super oily and I want a face lotion that won't make me shiny. I've tried Aveeno but it doesn't work.
-            What brand of lotion would work best for me?
+            Does anyone know of any good acne face washes that I can get at the drugstore?
           </p>
-              <p class="feature">
-                <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+          <div class="feature">
+              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
               2 Likes
-              </p>
-              <p class="feature">
-              <a href="oily.html">#oily</a>
-              </p>
-              <p class="feature">
-                  <a href="comments.html"> View Comments (0) </a>
-              </p>
+              &nbsp; &nbsp;
+              <a href="acne.html">#acne</a>
+              <a class="btn" data-toggle="collapse" data-target="#comment">View Comments (0)</a>
+            </div>
         </div>
+    </div>
+    <!-- recommendations -->
+    <div id="recommendationTab" class="tabcontent" style="display:none">
+        <h2 id="heading">Recommendations</h2>
+        <div class="question" id="post">
+          <ul class="col-sm-12">
+            <div class="col-sm-4" id="image">
+              <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+            </div>
+            <div class="col-sm-8">
+              <h2 id="name">
+                Anthony Davis
+              </h2>
+        <p id="time">
+          4:31 pm
+        </p>
+      </div>
+      </ul>
+        <p id="postBody">
+          I found a really good treatment for acne. It's the Mario Badescu drying lotion. Just put it on your pimples before you go to sleep and you'll wake up with clearer skin!
+        </p>
+        <div class="feature">
+          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
+          6 Likes
+          &nbsp; &nbsp;
+          <a href="acne.html">#acne</a>
+          <a class="btn" data-toggle="collapse" data-target="#rec2comment">View Comments (0)</a>
+        </div>
+      </div>
+      <!-- the comment below the original recommendation post -->
+      <div class="collapse" id="rec2comment">
+      <!-- <div class="collapse comment"> -->
+        <ul class="col-sm-12">
+          <div class="col-sm-4" id="image">
+            <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
+          </div>
+          <div class="col-sm-8">
+            <h2 id="name"> Katherine Meyer </h2>
+            <p id="time"> 10:35 am </p>
+          </div>
+        </ul>
+          <p id="postBody"> Can confirm, this works so well for me every time I break out. </p>
+      </div>
     </div>
   <script src="js/navbar.js"></script>
   <script src="js/tab.js"></script>
