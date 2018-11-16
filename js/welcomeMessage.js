@@ -9,3 +9,5 @@ $( document ).ready(function() {
     var username = localStorage.getItem("username");
     document.getElementById("welcomeMessage").innerHTML = "Welcome, " + username + "!";
 });
+
+getUsername();
