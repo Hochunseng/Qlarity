@@ -85,3 +85,82 @@ body {
   margin-left: -30px;
   width: 400px;
 }
+/* styles comments on question posts */
+#q-firstcomment, #q-secondcomment, #q-thirdcomment {
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  width: 400px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* styles comments on recommendation posts */
+#r-firstcomment, #r-secondcomment {
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  width: 400px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* styles reply div underneath comments */
+#commentName {
+  text-align: left;
+  margin-left: -28px;
+  font-size: 21px;
+}
+.reply {
+  border-style: solid;
+  border-width: 0px;
+  border-top-width: 1px;
+  width: 400px;
+  height: 225px;
+  margin-left: -42px;
+}
+/* the actual text box */
+.replyBox {
+  width: 300px;
+  height: 100px;
+  resize: none;
+}
+.replyButton {
+  margin-left: 200px;
+  margin-top: 10px;
+}
+/* when there are 0 comments */
+#q-nocomment {
+  border-style: solid;
+  border-width: 0px;
+  border-top-width: 1px;
+  width: 400px;
+  height: 225px;
+  margin-left: -42px;
+}
+#q-secondNocomment {
+  border-style: solid;
+  border-width: 0px;
+  border-top-width: 1px;
+  width: 400px;
+  height: 225px;
+  margin-left: -42px;
+}
+#r-nocomment {
+  border-style: solid;
+  border-width: 0px;
+  border-top-width: 1px;
+  width: 400px;
+  height: 225px;
+  margin-left: -42px;
+}
+.comment-profpic {
+  margin-left: -50px;
+  border-radius: 50%;
+  text-align: left;
+  margin-left: 13px;
+  margin-top: 10px;
+}

@@ -1,11 +1,8 @@
 <html>
 <head>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="js/welcomeMessage.js"></script>
+  <script src="js/profile.js"></script>
   <ul class = "col-sm-12">
     <div id="menu" class= "col-sm-4">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -58,8 +55,8 @@
   </ul>
 <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
-  <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
+  <button class="tablinks" onclick="openCity(event, 'questionTab')">View Questions</button>
+  <button class="tablinks" onclick="openCity(event, 'recommendationTab')">View Recommendations</button>
 </div>
 <!-- Tab content -->
 <!-- questions -->
@@ -83,31 +80,28 @@
           I want to prevent fine lines on my face but I'm not sure what products would be best for the lines around my eyes. Can anyone recommend anything?
         </p>
         <div class="feature">
-          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-          2 Likes
+          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this, 0)">
+          <span class="heartCount">2 Likes</span>
           &nbsp; &nbsp;
           <a href="antiaging.html"> #anti-aging </a>
-          <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (2) </a>
+          <a class="btn" data-toggle="collapse" data-target="#q-firstcomment"> View Comments (2) </a>
         </div>
        </div>
        <!--these are the comments -->
 
        <!-- <div class="collapse" id="comment"> -->
-       <div class="collapse" id="comment">
+       <div class="collapse" id="q-firstcomment">
          <ul class="col-sm-12">
            <div class="col-sm-4" id="image">
              <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
            </div>
            <div class="col-sm-8">
-             <h2 id="name">
-               Kayla Waller
-             </h2>
-             <p id="time">
-               11:35 am
-             </p>
+             <h2 id="name">Kayla Waller</h2>
+             <p id="time">11:35 am</p>
            </div>
          </ul>
          <p id="postBody"> Kiehl's has good products for this. You should check them out. </p>
+         <hr id="breakline">
       <!-- this is the second comment on the post -->
         <div class="next-comment">
          <ul class="col-sm-12">
@@ -115,16 +109,28 @@
              <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
            </div>
            <div class="col-sm-8">
-             <h2 id="name">
-               Andrea Zhang
-             </h2>
-             <p id="time">
-               1:25 pm
-             </p>
+             <h2 id="name">Andrea Zhang</h2>
+             <p id="time">1:25 pm</p>
           </div>
         </div>
      </ul>
          <p id="postBody"> I agree with Kayla. You should try Kiehl's!</p>
+         <!-- reply -->
+         <div class="reply">
+           <ul class="col-sm-12">
+             <div class="col-sm-4" id="image">
+               <img src="images/default-avatar.png" class="comment-profpic" height="50px" width="50px"alt="Profile Picture">
+             </div>
+             <div class="col-sm-8">
+               <h3 class="profileName" id="commentName"> Name </h3>
+               <br />
+             </div>
+             <textarea class="replyBox" placeholder=" Enter your comment here..."></textarea>
+             <div class="replyButton">
+               <button type="submit"> Comment </button>
+             </div>
+           </ul>
+         </div>
        </div>
       <br>
       <!-- next question -->
@@ -134,23 +140,35 @@
             <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
           </div>
           <div class="col-sm-8">
-            <h2 id="name">
-              Christina O'Neill
-            </h2>
-            <p id="time">
-              9:25 am
-            </p>
+            <h2 id="name">Christina O'Neill</h2>
+            <p id="time">9:25 am</p>
           </div>
         </ul>
         <p id="postBody">
           I'm in my late 20s but I'm worried about wrinkles. What products will help prevent them?
         </p>
             <div class="feature">
-              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-              2 Likes
+              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this, 1)">
+              <span class="heartCount">2 Likes</span>
               &nbsp; &nbsp;
               <a href="antiaging.html">#anti-aging</a>
-              <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (0) </a>
+              <a class="btn" data-toggle="collapse" data-target="#q-nocomment"> View Comments (0) </a>
+            </div>
+            <!-- reply -->
+            <div class="collapse" id="q-nocomment">
+              <ul class="col-sm-12">
+                <div class="col-sm-4" id="image">
+                  <img src="images/default-avatar.png" class="comment-profpic" height="50px" width="50px"alt="Profile Picture">
+                </div>
+                <div class="col-sm-8">
+                  <h3 class="profileName" id="commentName"> Name </h3>
+                  <br />
+                </div>
+                <textarea class="replyBox" placeholder=" Enter your comment here..."></textarea>
+                <div class="replyButton">
+                  <button type="submit"> Comment </button>
+                </div>
+              </ul>
             </div>
           </div>
         </div>
@@ -168,21 +186,19 @@
                   <p id="time"> 4:31 pm </p>
                 </div>
               </ul>
-
-
             <p id="postBody">
               Neutrogena has a really good anti-aging line. No matter your skin type, you should try it out!
             </p>
             <div class="feature">
-              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-              2 Likes
+              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this, 2)">
+              <span class="heartCount">2 Likes</span>
               &nbsp; &nbsp;
               <a href="antiaging.html">#anti-aging</a>
-              <a class="btn" data-toggle="collapse" data-target="#comment">View Comments (0)</a>
+              <a class="btn" data-toggle="collapse" data-target="#r-firstcomment">View Comments (1)</a>
             </div>
           </div>
           <!-- the comment below the original recommendation post -->
-          <div class="collapse" id="comment">
+          <div class="collapse" id="r-firstcomment">
             <ul class="col-sm-12">
               <div class="col-sm-4" id="image">
                 <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
@@ -193,6 +209,22 @@
               </div>
             </ul>
               <p id="postBody"> I agree, I love this product! </p>
+              <!-- reply -->
+              <div class="reply">
+                <ul class="col-sm-12">
+                  <div class="col-sm-4" id="image">
+                    <img src="images/default-avatar.png" class="comment-profpic" height="50px" width="50px"alt="Profile Picture">
+                  </div>
+                  <div class="col-sm-8">
+                    <h3 class="profileName" id="commentName"> Name </h3>
+                    <br />
+                  </div>
+                  <textarea class="replyBox" placeholder=" Enter your comment here..."></textarea>
+                  <div class="replyButton">
+                    <button type="submit"> Comment </button>
+                  </div>
+                </ul>
+              </div>
           </div>
         </div>
 
@@ -200,7 +232,7 @@
       <script src="js/navbar.js"></script>
       <script src="js/tab.js"></script>
       <script src="js/heartToggle.js"></script>
-      <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -46,16 +46,20 @@ body {
   padding-bottom: 25px;
 }
 
-/* centering the text & text text box */
+/* centering the text & text box */
 .textInput {
   text-align: center;
 }
-
 h2 {
   text-align: center;
 }
 h3 {
   text-align: center;
+}
+.response{
+  width: 550px;
+  height: 250px;
+  resize: none;
 }
 
 #addImage {

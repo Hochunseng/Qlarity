@@ -1,11 +1,8 @@
 <html>
 <head>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="js/welcomeMessage.js"></script>
+  <script src="js/profile.js"></script>
   <ul class = "col-sm-12">
     <div id="menu" class= "col-sm-4">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -58,8 +55,8 @@
   </ul>
 <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
-  <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
+  <button class="tablinks" onclick="openCity(event, 'questionTab')">View Questions</button>
+  <button class="tablinks" onclick="openCity(event, 'recommendationTab')">View Recommendations</button>
 </div>
 <!-- Tab content -->
 <!-- questions -->
@@ -79,17 +76,17 @@
           I have such oily skin and I still haven't found a moisturizer that keeps my skin matte all day. Does anyone have any recommendations at all for me?
         </p>
         <div class="feature">
-          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-          3 Likes
+          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this, 0)">
+          <span class="heartCount">3 Likes</span>
           &nbsp; &nbsp;
           <a href="oily.html"> #oily </a>
-          <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (2) </a>
+          <a class="btn" data-toggle="collapse" data-target="#q-firstcomment"> View Comments (2) </a>
         </div>
        </div>
        <!--these are the comments -->
 
        <!-- <div class="collapse" id="comment"> -->
-       <div class="collapse" id="comment">
+       <div class="collapse" id="q-firstcomment">
          <ul class="col-sm-12">
            <div class="col-sm-4" id="image">
              <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
@@ -100,6 +97,7 @@
            </div>
          </ul>
          <p id="postBody"> Try Aveeno daily moisturizer. It's not targeted towards oily skin, but it works pretty well. </p>
+         <hr id="breakline">
       <!-- this is the second comment on the post -->
         <div class="next-comment">
          <ul class="col-sm-12">
@@ -113,6 +111,22 @@
         </div>
      </ul>
          <p id="postBody"> I've used Kiehl's mattifying lotion for years and it's kept my oily skin under control. You should give it a try! </p>
+         <!-- reply -->
+         <div class="reply">
+           <ul class="col-sm-12">
+             <div class="col-sm-4" id="image">
+               <img src="images/default-avatar.png" class="comment-profpic" height="50px" width="50px"alt="Profile Picture">
+             </div>
+             <div class="col-sm-8">
+               <h3 class="profileName" id="commentName"> Name </h3>
+               <br />
+             </div>
+             <textarea class="replyBox" placeholder=" Enter your comment here..."></textarea>
+             <div class="replyButton">
+               <button type="submit"> Comment </button>
+             </div>
+           </ul>
+         </div>
        </div>
       <br>
       <!-- next question -->
@@ -130,11 +144,27 @@
           I'm looking for a new face wash for oily skin. I'm using Neutrogena daily wash now but it doesn't do anything to control the oil.
         </p>
         <div class="feature">
-            <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-            1 Like
+            <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this, 1)">
+            <span class="heartCount">1 Likes</span>
             &nbsp; &nbsp;
             <a href="oily.html">#oily</a>
-            <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (0) </a>
+            <a class="btn" data-toggle="collapse" data-target="#q-nocomment"> View Comments (0) </a>
+        </div>
+        <!-- reply -->
+        <div class="collapse" id="q-nocomment">
+          <ul class="col-sm-12">
+            <div class="col-sm-4" id="image">
+              <img src="images/default-avatar.png" class="comment-profpic" height="50px" width="50px"alt="Profile Picture">
+            </div>
+            <div class="col-sm-8">
+              <h3 class="profileName" id="commentName"> Name </h3>
+              <br />
+            </div>
+            <textarea class="replyBox" placeholder=" Enter your comment here..."></textarea>
+            <div class="replyButton">
+              <button type="submit"> Comment </button>
+            </div>
+          </ul>
         </div>
       </div>
     </div>
@@ -156,15 +186,15 @@
               Oil blotting sheets are my holy grail! They come in clutch in the middle of the day and keep my shine under control. Highly recommend to all!
             </p>
             <div class="feature">
-              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-              5 Likes
+              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this, 2)">
+              <span class="heartCount">5 Likes</span>
               &nbsp; &nbsp;
               <a href="oily.html">#oily</a>
-              <a class="btn" data-toggle="collapse" data-target="#comment">View Comments (0)</a>
+              <a class="btn" data-toggle="collapse" data-target="#r-firstcomment">View Comments (1)</a>
             </div>
           </div>
           <!-- the comment below the original recommendation post -->
-          <div class="collapse" id="comment">
+          <div class="collapse" id="r-firstcomment">
             <ul class="col-sm-12">
               <div class="col-sm-4" id="image">
                 <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
@@ -175,6 +205,22 @@
               </div>
             </ul>
               <p id="postBody"> I agree, I love this product! </p>
+              <!-- reply -->
+              <div class="reply">
+                <ul class="col-sm-12">
+                  <div class="col-sm-4" id="image">
+                    <img src="images/default-avatar.png" class="comment-profpic" height="50px" width="50px"alt="Profile Picture">
+                  </div>
+                  <div class="col-sm-8">
+                    <h3 class="profileName" id="commentName"> Name </h3>
+                    <br />
+                  </div>
+                  <textarea class="replyBox" placeholder=" Enter your comment here..."></textarea>
+                  <div class="replyButton">
+                    <button type="submit"> Comment </button>
+                  </div>
+                </ul>
+              </div>
           </div>
         </div>
 
@@ -182,7 +228,7 @@
       <script src="js/navbar.js"></script>
       <script src="js/tab.js"></script>
       <script src="js/heartToggle.js"></script>
-      <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

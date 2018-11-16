@@ -2,18 +2,13 @@
 <head>
   <title> qlarity | Post </title>
   <link rel="stylesheet" href="css/posting.css">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
   <script src="js/tab.js"></script>
-  <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="js/welcomeMessage.js"></script>
   <ul class = "col-sm-12">
     <div id="menu" class= "col-sm-4">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="css/navbar.css">
-      <link rel="stylesheet" type="text/css" href="css/post.css">
       <title>Post</title>
       <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -53,19 +48,20 @@
 <div id="comments"></div>
   <!-- <h2>Ask a Question or Recommend a Product or Routine</h2> -->
   <div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
-    <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
+    <button class="tablinks" onclick="openCity(event, 'questionTab')">Ask a Question</button>
+    <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Post a Recommendation</button>
   </div>
 
   <!-- to post a question -->
   <div id="questionTab" class="tabcontent">
-    <h2> Ask a Question </h2>
+    <!-- <h2> Ask a Question </h2> -->
     <h3> What do you need help with? </h3>
     <!-- <form class="textInput" action="//www.html.am/html-codes/textboxes/submitted.cfm"> -->
     <form class="textInput" action="" method="get">
       <fieldset>
-      <textarea name="myTextBox" cols="70" rows="10" style="border:1px solid #000000;" required="required"> Type repsonse here...
-      </textarea>
+      <!-- <textarea name="myTextBox" cols="70" rows="10" style="border:1px solid #000000;">Type response here...
+      </textarea> -->
+      <textarea name="myTextBox" class="response textBox" placeholder=" Type response here..."></textarea>
       <div id="addImage">
         <form action="">
           <input type="file" name="pic" accept="image/*" align="right">
@@ -75,22 +71,22 @@
       <br />
       <form class="select_tags" required="required">
         <p> Select which skin concern(s) you are addressing: </p>
-        <input type="checkbox" name="concern" /> #acne
-        <input type="checkbox" name="concern" /> #anti-aging
-        <input type="checkbox" name="concern" /> #combo
-        <input type="checkbox" name="concern" /> #dryness
-        <input type="checkbox" name="concern" /> #normal
+        <input class="check" type="checkbox" name="concern" value="#acne"/> #acne
+        <input class="check" type="checkbox" name="concern" value="#anti-aging"/> #anti-aging
+        <input class="check" type="checkbox" name="concern" value="#combo"/> #combo
+        <input class="check" type="checkbox" name="concern" value="#dryness"/> #dryness
+        <input class="check" type="checkbox" name="concern" value="#normal"/> #normal
         <br />
-        <input type="checkbox" name="concern" /> #oily
-        <input type="checkbox" name="concern" /> #pigmentation
-        <input type="checkbox" name="concern" /> #redness
-        <input type="checkbox" name="concern" /> #sensitive
-        <input type="checkbox" name="concern" /> #other
+        <input class="check" type="checkbox" name="concern" value="#oily"/> #oily
+        <input class="check" type="checkbox" name="concern" value="#pigmentation"/> #pigmentation
+        <input class="check" type="checkbox" name="concern" value="#redness"/> #redness
+        <input class="check" type="checkbox" name="concern" value="#sensitive"/> #sensitive
+        <input class="check" type="checkbox" name="concern" value="#other"/> #other
       </form>
       <br />
       <br />
       <form action="index.html">
-        <input type="submit" class="submitbutton"/>
+        <input type="submit" class="submitbutton" onclick="storeQuestion(0)"/>
       </form>
     </fieldset>
     </form>
@@ -98,47 +94,44 @@
 
   <!-- to post a recommendation -->
   <div id="recommendationTab" class="tabcontent" style="display:none">
-    <h2> Recommend a Product or Routine </h2>
-    <h3> What do you recommend? </h3>
+    <!-- <h2> Recommend a Product or Routine </h2> -->
+    <h3> What product or routine do you recommend? </h3>
     <!-- <form class="textInput" action="//www.html.am/html-codes/textboxes/submitted.cfm"> -->
     <form class="textInput" action="" method="get">
       <fieldset>
-      <textarea name="myTextBox" cols="70" rows="10" style="border:1px solid #000000;" required="required"> Type response here...
-      </textarea>
+      <!-- <textarea name="myTextBox" cols="70" rows="10" style="border:1px solid #000000;" required="required"> Type response here...
+      </textarea> -->
+      <textarea name="myTextBox" class="response textBox" placeholder=" Type response here..."></textarea>
       <div id="addImage">
         <form action="">
           <input type="file" name="pic" accept="image/*">
-        <!-- <input type="submit"> -->
         </form>
       </div>
       <br />
       <form class="select_tags" required="required">
         <p> Select which skin concern(s) you are addressing: </p>
-        <input type="checkbox" name="concern" /> #acne
-        <input type="checkbox" name="concern" /> #anti-aging
-        <input type="checkbox" name="concern" /> #combo
-        <input type="checkbox" name="concern" /> #dryness
-        <input type="checkbox" name="concern" /> #normal
+        <input class="check" type="checkbox" name="concern" value="#acne"/> #acne
+        <input class="check" type="checkbox" name="concern" value="#anti-aging"/> #anti-aging
+        <input class="check" type="checkbox" name="concern" value="#combo"/> #combo
+        <input class="check" type="checkbox" name="concern" value="#dryness"/> #dryness
+        <input class="check" type="checkbox" name="concern" value="#normal"/> #normal
         <br />
-        <input type="checkbox" name="concern" /> #oily
-        <input type="checkbox" name="concern" /> #pigmentation
-        <input type="checkbox" name="concern" /> #redness
-        <input type="checkbox" name="concern" /> #sensitive
-        <input type="checkbox" name="concern" /> #other
+        <input class="check" type="checkbox" name="concern" value="#oily"/> #oily
+        <input class="check" type="checkbox" name="concern" value="#pigmentation"/> #pigmentation
+        <input class="check" type="checkbox" name="concern" value="#redness"/> #redness
+        <input class="check" type="checkbox" name="concern" value="#sensitive"/> #sensitive
+        <input class="check" type="checkbox" name="concern" value="#other"/> #other
       </form>
-
       <br />
       <br />
-      <!-- <input type="submit" class="submitbutton"/> -->
       <form action="index.html">
-        <input type="submit" class="submitbutton"/>
+        <input type="submit" class="submitbutton" onclick="storeRecommendation(1)"/>
       </form>
     </fieldset>
     </form>
-
   </div>
 
-
   <script src="js/navbar.js"></script>
+  <script src="js/post.js"></script>
 </body>
 </html>

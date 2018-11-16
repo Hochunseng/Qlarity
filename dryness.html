@@ -1,11 +1,8 @@
 <html>
 <head>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="js/welcomeMessage.js"></script>
+  <script src="js/profile.js"></script>
   <ul class = "col-sm-12">
     <div id="menu" class= "col-sm-4">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -58,8 +55,8 @@
   </ul>
 <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'questionTab')">Question</button>
-  <button class="tablinks" onclick="openCity(event, 'recommendationTab')">Recommendation</button>
+  <button class="tablinks" onclick="openCity(event, 'questionTab')">View Questions</button>
+  <button class="tablinks" onclick="openCity(event, 'recommendationTab')">View Recommendations</button>
 </div>
 <!-- Tab content -->
 <!-- questions -->
@@ -71,29 +68,25 @@
             <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
           </div>
           <div class="col-sm-8">
-            <h2 id="name">
-              Mariah Finkle
-            </h2>
-            <p id="time">
-              11:10 am
-            </p>
+            <h2 id="name">Mariah Finkle</h2>
+            <p id="time">11:10 am</p>
           </div>
         </ul>
         <p id="postBody">
           My skin is super dry and it gets even worse when the weather gets cold. I use Aveeno lotion now but it's not cutting it. Does anyone know a better brand to use?
         </p>
         <div class="feature">
-          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-          2 Likes
+          <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this, 0)">
+          <span class="heartCount">2 Likes</span>
           &nbsp; &nbsp;
           <a href="dryness.html"> #dryness </a>
-          <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (1) </a>
+          <a class="btn" data-toggle="collapse" data-target="#q-firstcomment"> View Comments (1) </a>
         </div>
        </div>
        <!--these are the comments -->
 
        <!-- <div class="collapse" id="comment"> -->
-       <div class="collapse" id="comment">
+       <div class="collapse" id="q-firstcomment">
          <ul class="col-sm-12">
            <div class="col-sm-4" id="image">
              <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
@@ -104,6 +97,22 @@
            </div>
          </ul>
          <p id="postBody"> I suggest trying Garnier gel moisturizer. You can use it day and night. </p>
+         <!-- reply -->
+         <div class="reply">
+           <ul class="col-sm-12">
+             <div class="col-sm-4" id="image">
+               <img src="images/default-avatar.png" class="comment-profpic" height="50px" width="50px"alt="Profile Picture">
+             </div>
+             <div class="col-sm-8">
+               <h3 class="profileName" id="commentName"> Name </h3>
+               <br />
+             </div>
+             <textarea class="replyBox" placeholder=" Enter your comment here..."></textarea>
+             <div class="replyButton">
+               <button type="submit"> Comment </button>
+             </div>
+           </ul>
+         </div>
        </div>
       <br>
       <!-- next question -->
@@ -121,11 +130,27 @@
           I need a new face wash. I have dry skin and I'm using Panoxyl in the morning and at night but I think it's irritating my skin.
         </p>
         <div class="feature">
-            <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-            1 Like
+            <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this, 1)">
+            <span class="heartCount">1 Likes</span>
             &nbsp; &nbsp;
             <a href="dryness.html">#dryness</a>
-            <a class="btn" data-toggle="collapse" data-target="#comment"> View Comments (0) </a>
+            <a class="btn" data-toggle="collapse" data-target="#q-nocomment"> View Comments (0) </a>
+        </div>
+        <!-- reply -->
+        <div class="collapse" id="q-nocomment">
+          <ul class="col-sm-12">
+            <div class="col-sm-4" id="image">
+              <img src="images/default-avatar.png" class="comment-profpic" height="50px" width="50px"alt="Profile Picture">
+            </div>
+            <div class="col-sm-8">
+              <h3 class="profileName" id="commentName"> Name </h3>
+              <br />
+            </div>
+            <textarea class="replyBox" placeholder=" Enter your comment here..."></textarea>
+            <div class="replyButton">
+              <button type="submit"> Comment </button>
+            </div>
+          </ul>
         </div>
       </div>
     </div>
@@ -147,15 +172,15 @@
               The Body Shop has a really good dryness skincare line. You should definitely check out their different products, like their moisturizers and face washes.
             </p>
             <div class="feature">
-              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this)">
-              2 Likes
+              <img src="images/heart.png" id="toggleButton" class="heart" height="20px" width="20px" alt="heart" onclick="changeImage(this, 2)">
+              <span class="heartCount">2 Likes</span>
               &nbsp; &nbsp;
               <a href="dryness.html">#dryness</a>
-              <a class="btn" data-toggle="collapse" data-target="#comment">View Comments (0)</a>
+              <a class="btn" data-toggle="collapse" data-target="#r-firstcomment">View Comments (1)</a>
             </div>
           </div>
           <!-- the comment below the original recommendation post -->
-          <div class="collapse" id="comment">
+          <div class="collapse" id="r-firstcomment">
             <ul class="col-sm-12">
               <div class="col-sm-4" id="image">
                 <img src="images/default-avatar.png" class="profpic" height="50px" width="50px"alt="Profile Picture">
@@ -166,13 +191,29 @@
               </div>
             </ul>
               <p id="postBody"> I agree, I love this product! </p>
+              <!-- reply -->
+              <div class="reply">
+                <ul class="col-sm-12">
+                  <div class="col-sm-4" id="image">
+                    <img src="images/default-avatar.png" class="comment-profpic" height="50px" width="50px"alt="Profile Picture">
+                  </div>
+                  <div class="col-sm-8">
+                    <h3 class="profileName" id="commentName"> Name </h3>
+                    <br />
+                  </div>
+                  <textarea class="replyBox" placeholder=" Enter your comment here..."></textarea>
+                  <div class="replyButton">
+                    <button type="submit"> Comment </button>
+                  </div>
+                </ul>
+              </div>
           </div>
         </div>
 
       <script src="js/navbar.js"></script>
       <script src="js/tab.js"></script>
       <script src="js/heartToggle.js"></script>
-      <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
