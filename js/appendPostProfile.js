@@ -16,13 +16,16 @@ function appendPostProfile() {
         }
     }
 
-    for(i = 0; i < recommendationHashtags.length; i++) {
-        if(recommendationHashtags[i]) {
-            hashtagRecommendationLink = recommendationHashtags[i];
-            hashtagRecommendationLink = hashtagRecommendationLink.substring(1, hashtagRecommendationLink.length);
-            break;
+    if(recommendationHashtags) {
+        for(i = 0; i < recommendationHashtags.length; i++) {
+            if(recommendationHashtags[i]) {
+                hashtagRecommendationLink = recommendationHashtags[i];
+                hashtagRecommendationLink = hashtagRecommendationLink.substring(1, hashtagRecommendationLink.length);
+                break;
+            }
         }
     }
+
 
     var currTime;
 
