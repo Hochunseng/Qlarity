@@ -8,16 +8,14 @@ function appendPost() {
     var hashtagQuestionLink = "";
     var hashtagRecommendationLink = "";
 
-    if(questionHashtags) {
-        for(i = 0; i < questionHashtags.length; i++) {
-            if(questionHashtags[i]) {
-                hashtagQuestionLink = questionHashtags[i];
-                hashtagQuestionLink = hashtagQuestionLink.substring(1, hashtagQuestionLink.length);
-                break;
-            }
+    for(i = 0; i < questionHashtags.length; i++) {
+        if(questionHashtags[i]) {
+            hashtagQuestionLink = questionHashtags[i];
+            hashtagQuestionLink = hashtagQuestionLink.substring(1, hashtagQuestionLink.length);
+            break;
         }
     }
- 
+
     if(recommendationHashtags) {
         for(i = 0; i < recommendationHashtags.length; i++) {
             if(recommendationHashtags[i]) {
@@ -29,14 +27,12 @@ function appendPost() {
     }
 
 
-    if(questionHashtags) {
-        for(i = 0; i < questionHashtags.length; i++) {
-            if(questionHashtags[i]) {
-                allHashtagsQuestion += questionHashtags[i];
-            }
+    for(i = 0; i < questionHashtags.length; i++) {
+        if(questionHashtags[i]) {
+            allHashtagsQuestion += questionHashtags[i];
         }
     }
-  
+
     if(recommendationHashtags) {
         for(i = 0 ; i < recommendationHashtags.length; i++) {
             if(recommendationHashtags[i]) {
