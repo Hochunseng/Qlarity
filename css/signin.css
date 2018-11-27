@@ -106,6 +106,9 @@ padding-top: 10px;
 font-family: SignPainter;
 text-align: center;
 margin-top: 40px;
+color: #337AB7;
+font-size: 75px;
+margin-bottom: -30px;
 }
 
 button a {
@@ -115,4 +118,10 @@ button a {
 
 button a:hover {
   color: white;
+}
+
+
+#body {
+  /*background-color: rgb(118, 180, 247);*/
+  background-color: #337ab7;
 }

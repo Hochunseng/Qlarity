@@ -18,3 +18,11 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+// Changes color of tabs
+$(document).ready(function(){
+        $('.tablinks').click(function () {
+            $('.active').removeClass("autofocus");
+            $('.active').removeClass("active");
+            $(this).addClass("active");
+        })
+    });

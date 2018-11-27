@@ -1,6 +1,7 @@
 <html>
 <head>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/welcomeMessage.js"></script>
   <script src="js/profile.js"></script>
   <ul class = "col-sm-12">
     <div id="menu" class= "col-sm-4">
@@ -14,8 +15,9 @@
       <div id="sideBarLinks">
       <a href="index.html">Home</a>
       <a href="profile.html">Profile</a>
-      <a href="post.html">Post</a>
-      <font color="#818181"><h4>Explore</h4></font>
+      <a href="post.html">Make a Post</a>
+      <font color="#818181"><h4>Following</h4></font>
+      <font color="#818181"><h4 id="following">Explore</h4></font>
       <a href="acne.html">#acne</a>
       <a href="antiaging.html">#anti-aging</a>
       <a href="combo.html">#combo</a>
@@ -26,7 +28,6 @@
       <a href="redness.html">#redness</a>
       <a href="sensitive.html">#sensitive</a>
       <a href="other.html">#other</a>
-      <font color="#818181"><h4>Following</h4></font>
       </div>
     </div>
 
@@ -35,7 +36,7 @@
     </div>
   </div>
   <div class = "col-sm-4">
-    <p id="logo"><a href="index.html"> qlarity </a></p>
+    <p class="logo"><a href="index.html" id="home-link"> qlarity </a></p>
   </div>
   <div id="signout" class = "col-sm-4">
     <p onload="getUsername()" id="welcomeMessage"></p>
@@ -43,18 +44,18 @@
   </div>
 </ul>
 </head>
-<body>
-  <ul class="col-sm-12">
-    <div class="col-sm-6">
-      <h1 id="title">#redness</h1>
-    </div>
-    <div class="col-sm-6">
-      <button onclick="change()" id='follow'>Follow</button>
-    </div>
-  </ul>
+<body id="body">
+  <div class="category">
+    <h1 id="title"> #redness </h1>
+    <button onclick="change()" id="follow"> Follow </button>
+  </div>
+  <p class="description">
+    Perhaps the most widely documented cause of redness is rosacea, a condition that causes redness and often small, red, pus-filled bumps on the face.
+    Sensitive skin can also be prone to redness if it comes into contact with irritating ingredients.
+  </p>
 <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'questionTab')">View Questions</button>
+  <button class="tablinks" onclick="openCity(event, 'questionTab')" autofocus>View Questions</button>
   <button class="tablinks" onclick="openCity(event, 'recommendationTab')">View Recommendations</button>
 </div>
 <!-- Tab content -->
@@ -219,6 +220,5 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script src="js/welcomeMessage.js"></script>
 </body>
 </html>

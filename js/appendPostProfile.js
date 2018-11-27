@@ -1,4 +1,4 @@
-function appendPost() {
+function appendPostProfile() {
     var content = localStorage.getItem("postQuestionText");
     var recommendation = localStorage.getItem("postRecommendationText");
     var questionHashtags = JSON.parse(localStorage.getItem("questionHashtags"));
@@ -24,23 +24,12 @@ function appendPost() {
         }
     }
 
-    for(i = 0; i < questionHashtags.length; i++) {
-        if(questionHashtags[i]) {
-            allHashtagsQuestion += questionHashtags[i];
-        }
-    }
-
-    for(i = 0 ; i < recommendationHashtags.length; i++) {
-        if(recommendationHashtags[i]) {
-            allHashtagsRecommendation += recommendationHashtags[i];
-        }
-    }
-
     var currTime;
 
     if(content) {
         currTime = localStorage.getItem("questionTime");
-        var div = document.getElementsByClassName("question")[2];
+        var div = document.getElementsByClassName("question")[0];
+        console.log(div);
         document.getElementById("hashtag").setAttribute("href", hashtagRecommendationLink + ".html");
         var divClone = div.cloneNode(true);
 
@@ -60,39 +49,47 @@ function appendPost() {
         changeLikeCount.innerHTML = "0 Likes";
 
         var likeCount = divClone.querySelector('.heart');
-        likeCount.setAttribute("onclick", "changeImage(this, 3)");
+        likeCount.setAttribute("onclick", "changeImage(this, 0)");
 
         var changeHashtag = divClone.querySelector('#hashtag');
-        
+        for(i = 0; i < questionHashtags.length; i++) {
+            if(questionHashtags[i]) {
+                allHashtagsQuestion += questionHashtags[i];
+            }
+        }
         changeHashtag.innerHTML = allHashtagsQuestion;
 
         var changeComment = divClone.querySelector(".btn");
-        changeComment.setAttribute("data-target", "#q-nocomment2");
+        changeComment.setAttribute("data-target", "#q-firstcomment2");
+        console.log(changeComment);
 
         var changeCollapse = divClone.querySelector('.collapse');
-        changeCollapse.setAttribute("id", "q-nocomment2");
+        console.log(divClone);
+        changeCollapse.setAttribute("id", "q-firstcomment2");
 
-        localStorage.setItem("questionClone", divClone);
-
-        var questionTab = document.getElementById("questionTab");
+        console.log(divClone);
 
         var postLocation = document.getElementById("post");
         postLocation.insertAdjacentElement('beforebegin', divClone);
         divClone.insertAdjacentElement('afterend', document.createElement("br"));
 
+
         document.getElementsByClassName("heart")[0].setAttribute("onclick", "changeImage(this,0)");
+
+
     }
 
     if(recommendation) {
         currTime = localStorage.getItem("recommendationTime");
-        var div = document.getElementsByClassName("question")[3];
+        var div = document.getElementsByClassName("question")[1];
+        console.log(div);
         document.getElementById("hashtag").setAttribute("href", hashtagQuestionLink + ".html");
         var divClone = div.cloneNode(true);
 
         console.log(divClone);
 
         var postBody = divClone.querySelector('#postBody');
-        postBody.innerHTML = recommendation;
+        postBody.innerHTML = content;
 
         var name = localStorage.getItem("username");
         var changeName = divClone.querySelector('#name');
@@ -104,27 +101,34 @@ function appendPost() {
         var changeLikeCount = divClone.querySelector('.heartCount');
         changeLikeCount.innerHTML = "0 Likes";
 
-        var changeHashtag = divClone.querySelector('#hashtag');
+        var likeCount = divClone.querySelector('.heart');
+        likeCount.setAttribute("onclick", "changeImage(this, 2)");
 
+        var changeHashtag = divClone.querySelector('#hashtag');
+        for(i = 0; i < recommendationHashtags.length; i++) {
+            if(recommendationHashtags[i]) {
+                allHashtagsRecommendation += recommendationHashtags[i];
+            }
+        }
         changeHashtag.innerHTML = allHashtagsRecommendation;
 
         var changeComment = divClone.querySelector(".btn");
-        changeComment.setAttribute("data-target", "#q-nocomment3");
+        changeComment.setAttribute("data-target", "#r-nocomment2");
 
         var changeCollapse = divClone.querySelector('.collapse');
-        changeCollapse.setAttribute("id", "q-nocomment3");
+        changeCollapse.setAttribute("id", "r-nocomment2");
 
+        console.log(divClone);
 
-        var questionTab = document.getElementById("recommendationTab");
-        console.log(questionTab);
-
-        var recommendationLoc = questionTab.querySelector("#post");
-        recommendationLoc.insertAdjacentElement('beforebegin', divClone);
+        var recommendationTab = document.getElementsByClassName("recommendation")[0];
+        recommendationTab.insertAdjacentElement('beforebegin', divClone);
         divClone.insertAdjacentElement('afterend', document.createElement("br"));
 
-        document.getElementsByClassName("heart")[4].setAttribute("onclick", "changeImage(this,4)");
+
+        document.getElementsByClassName("heart")[0].setAttribute("onclick", "changeImage(this,2)");   
     }
+
 
 }
 
-appendPost();
+appendPostProfile();

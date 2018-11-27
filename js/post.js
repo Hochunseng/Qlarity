@@ -4,6 +4,9 @@ function storeQuestion(i){
     var postText = texts[i];
     localStorage.setItem("postQuestionText", postText.value);
     var test = localStorage.getItem("postQuestionText");
+    var currTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    currTime = new Date().toLocaleDateString() + " " + currTime;
+    localStorage.setItem("questionTime", currTime);
     console.log(test);
 
     var checks = document.getElementsByClassName("check");
@@ -14,7 +17,7 @@ function storeQuestion(i){
         console.log(checks[index].value);
       }
     }
-    localStorage.setItem("hashtags", JSON.stringify(hashtags));
+    localStorage.setItem("questionHashtags", JSON.stringify(hashtags));
 
     alert("Your question has been submitted");
 }
@@ -24,6 +27,9 @@ function storeRecommendation(i) {
     var postText = texts[i];
     localStorage.setItem("postRecommendationText", postText.value);
     var test = localStorage.getItem("postRecommendationText");
+    var currTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    currTime = new Date().toLocaleDateString() + " " + currTime;
+    localStorage.setItem("recommendationTime", currTime);
     console.log(test);
 
     var checks = document.getElementsByClassName("check");
@@ -34,7 +40,7 @@ function storeRecommendation(i) {
           console.log(checks[index].value);
         }
       }
-      localStorage.setItem("hashtags", JSON.stringify(hashtags));
+      localStorage.setItem("recommendationHashtags", JSON.stringify(hashtags));
     
       alert("Your recommendation has been submitted");
 }

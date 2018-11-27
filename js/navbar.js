@@ -21,14 +21,15 @@ function change ()
   if (elem.innerHTML=="Follow") {
     elem.innerHTML = "Following";
     elem.style.backgroundColor = "#4CAF50";
-    document.getElementById("sideBarLinks").appendChild(newFollow);
+    document.getElementById("following").appendChild(newFollow);
   }
 
   else {
     elem.innerHTML = "Follow";
     elem.style.backgroundColor = "#008CBA";
-    document.getElementById("sideBarLinks").removeChild(document.getElementById("sideBarLinks").lastChild)
-    //$('#sideBarLinks').children().last().remove();
+    //document.getElementById("sideBarLinks").removeChild(document.getElementById("sideBarLinks").lastChild)
+    //document.getElementById("following").removeChild(document.getElementById("following").lastChild);
+    document.getElementById("following").innerHTML = "Following";
   }
 
 }
