@@ -16,13 +16,16 @@ function appendPost() {
         }
     }
 
-    for(i = 0; i < recommendationHashtags.length; i++) {
-        if(recommendationHashtags[i]) {
-            hashtagRecommendationLink = recommendationHashtags[i];
-            hashtagRecommendationLink = hashtagRecommendationLink.substring(1, hashtagRecommendationLink.length);
-            break;
+    if(recommendationHashtags) {
+        for(i = 0; i < recommendationHashtags.length; i++) {
+            if(recommendationHashtags[i]) {
+                hashtagRecommendationLink = recommendationHashtags[i];
+                hashtagRecommendationLink = hashtagRecommendationLink.substring(1, hashtagRecommendationLink.length);
+                break;
+            }
         }
     }
+
 
     for(i = 0; i < questionHashtags.length; i++) {
         if(questionHashtags[i]) {
@@ -30,11 +33,14 @@ function appendPost() {
         }
     }
 
-    for(i = 0 ; i < recommendationHashtags.length; i++) {
-        if(recommendationHashtags[i]) {
-            allHashtagsRecommendation += recommendationHashtags[i];
+    if(recommendationHashtags) {
+        for(i = 0 ; i < recommendationHashtags.length; i++) {
+            if(recommendationHashtags[i]) {
+                allHashtagsRecommendation += recommendationHashtags[i];
+            }
         }
     }
+
 
     var currTime;
 
