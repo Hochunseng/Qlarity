@@ -8,11 +8,13 @@ function appendPostProfile() {
     var hashtagQuestionLink = "";
     var hashtagRecommendationLink = "";
 
-    for(i = 0; i < questionHashtags.length; i++) {
-        if(questionHashtags[i]) {
-            hashtagQuestionLink = questionHashtags[i];
-            hashtagQuestionLink = hashtagQuestionLink.substring(1, hashtagQuestionLink.length);
-            break;
+    if(questionHashtags) {
+        for(i = 0; i < questionHashtags.length; i++) {
+            if(questionHashtags[i]) {
+                hashtagQuestionLink = questionHashtags[i];
+                hashtagQuestionLink = hashtagQuestionLink.substring(1, hashtagQuestionLink.length);
+                break;
+            }
         }
     }
 
