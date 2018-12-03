@@ -90,6 +90,11 @@ function appendPost() {
         for(i = 0; i < document.getElementsByClassName("heart").length;i++) {
             document.getElementsByClassName("heart")[i].setAttribute("onclick", "changeImage(this," + i + ")");
         }
+        var commentButtons = document.getElementsByClassName("commentButton");
+        for(j = 0; j < commentButtons.length; j++) {
+            commentButtons[j].setAttribute("onclick", "postComment(" + j + ")");
+        }
+        console.log(commentButtons);
     }
 
     if(recommendation) {
@@ -136,6 +141,11 @@ function appendPost() {
         for(i = 0; i < document.getElementsByClassName("heart").length;i++) {
             document.getElementsByClassName("heart")[i].setAttribute("onclick", "changeImage(this," + i + ")");
         }
+        var commentButtons = document.getElementsByClassName("commentButton");
+        for(j = 0; j < commentButtons.length; j++) {
+            commentButtons[j].setAttribute("onclick", "postComment(" + j + ")");
+        }
+        console.log(commentButtons);
     }
 
 }
